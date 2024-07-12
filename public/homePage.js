@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Получение курсов валют
     const ratesBoard = new RatesBoard();
     const getRates = () => {
-        ApiConnector.getRates(response => {
+        ApiConnector.getStocks(response => {
             if (response.success) {
                 ratesBoard.clearTable();
                 ratesBoard.fillTable(response.data);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.success) {
                 favoritesWidget.clearTable();
                 favoritesWidget.fillTable(response.data);
-                favoritesWidget.updateUsersList(response.data);
+                moneyManager.updateUsersList(response.data);
             }
         });
     };
