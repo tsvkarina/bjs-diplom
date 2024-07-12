@@ -10,8 +10,7 @@
             if (response.success) {
                 location.reload();
             } else {
-                document.querySelector('#login .ui.message.negative').textContent = response.error;
-                document.querySelector('#login .ui.message.negative').style.display = 'block';
+               userForm.setLoginErrorMessage(response.error);
             }
         });
     };
@@ -23,8 +22,7 @@
             if (response.success) {
                 location.reload();
             } else {
-                document.querySelector('#register .ui.message.negative').textContent = response.error;
-                document.querySelector('#register .ui.message.negative').style.display = 'block';
+                userForm.setRegisterErrorMessage(response.error)
             }
         });
     };
